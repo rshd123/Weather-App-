@@ -7,7 +7,8 @@ let container = document.querySelector('.container');
 let weatherBox = document.querySelector('.weather-box');
 let weatherDet = document.querySelector('.weather-details');
 
-searchBtn.addEventListener("click",async ()=>{
+
+async function mainCode(){
 
     const apiKey = 'c74a208d3c3a5c888d6b7bdda4be7e68';
     const city = searchBar.value;   
@@ -96,4 +97,17 @@ searchBtn.addEventListener("click",async ()=>{
     let windVal = document.querySelector(".measure-2");
     let wind = response2.wind.speed;
     windVal.innerHTML=`<p class="measure-2">${wind} km/h</p>`;
+}
+
+
+searchBtn.addEventListener("click",async ()=>{
+    mainCode();
 });
+
+let inp = document.querySelector("#search-bar");
+
+inp.addEventListener("keydown",(event)=>{
+    if(event.key=="Enter"){
+        mainCode();
+    }
+})
