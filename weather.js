@@ -21,6 +21,7 @@ async function mainCode(){
     let response = await fetch(url);
     let response2= await response.json();
 
+    console.log(response2);
     if(response2.cod==404){
         container.style.height='400px';     
         weatherBox.classList.remove('active');
